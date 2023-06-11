@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
-import css from '../ContactForm/ContactForm.module.css';
+import css from './ContactForm.module.css';
 
 class ContactForm extends Component {
   handleClick() {
     const { onAddContact } = this.props;
-    onAddContact && onAddContact();
+    onAddContact();
   }
   handleChangeName(e) {
     const { value } = e.currentTarget;
     const { onChangeName } = this.props;
-    onChangeName && onChangeName(value);
+    onChangeName(value);
   }
   handleChangePhone(e) {
     const { value } = e.currentTarget;
     const { onChangePhone } = this.props;
-    onChangePhone && onChangePhone(value);
+    onChangePhone(value);
   }
 
   handleSubmit = e => {
@@ -34,7 +34,7 @@ class ContactForm extends Component {
             }}
             type="text"
             name="name"
-            pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
